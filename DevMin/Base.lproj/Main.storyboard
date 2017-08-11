@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="vc" id="BYZ-38-t0r" customClass="ViewController" customModule="DevMin" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g6x-qA-jwX">
+                                <rect key="frame" x="112.5" y="20" width="150" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="sAh-i7-UJB"/>
+                                </constraints>
+                                <state key="normal" title="Navy">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="navyButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wxc-pd-rnk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5E1-Hp-Cmd">
+                                <rect key="frame" x="112.5" y="58" width="150" height="30"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="WqE-BI-LyE"/>
+                                </constraints>
+                                <state key="normal" title="Gold">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="goldButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="11D-QM-apO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YN5-1p-2gX">
+                                <rect key="frame" x="112.5" y="96" width="150" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="o0K-md-R74"/>
+                                </constraints>
+                                <state key="normal" title="Watch">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="buzz1" translatesAutoresizingMaskIntoConstraints="NO" id="bcA-dD-BBd">
+                                <rect key="frame" x="67" y="134" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="BwI-WS-h0J"/>
+                                    <constraint firstAttribute="width" constant="240" id="Eva-tx-l95"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="g6x-qA-jwX" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="05q-Tk-yrX"/>
+                            <constraint firstItem="YN5-1p-2gX" firstAttribute="leading" secondItem="5E1-Hp-Cmd" secondAttribute="leading" id="9Ph-QU-PST"/>
+                            <constraint firstItem="g6x-qA-jwX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="D4e-Fa-ejy"/>
+                            <constraint firstItem="5E1-Hp-Cmd" firstAttribute="top" secondItem="g6x-qA-jwX" secondAttribute="bottom" constant="8" symbolic="YES" id="FWo-fR-KPc"/>
+                            <constraint firstItem="bcA-dD-BBd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VT8-z8-e01"/>
+                            <constraint firstItem="bcA-dD-BBd" firstAttribute="top" secondItem="YN5-1p-2gX" secondAttribute="bottom" constant="8" symbolic="YES" id="X3o-Ge-ExT"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" relation="greaterThanOrEqual" secondItem="bcA-dD-BBd" secondAttribute="bottom" constant="8" symbolic="YES" id="XQd-rD-2cR"/>
+                            <constraint firstItem="YN5-1p-2gX" firstAttribute="top" secondItem="5E1-Hp-Cmd" secondAttribute="bottom" constant="8" symbolic="YES" id="u1k-Ab-Dia"/>
+                            <constraint firstItem="5E1-Hp-Cmd" firstAttribute="leading" secondItem="g6x-qA-jwX" secondAttribute="leading" id="zae-xr-wvD"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="goldButtony" destination="5E1-Hp-Cmd" id="dhy-Be-8kE"/>
+                        <outlet property="navyButtony" destination="g6x-qA-jwX" id="m2O-Lo-bVr"/>
+                        <outlet property="watchColorButtony" destination="YN5-1p-2gX" id="nUT-2d-egA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="296" y="323"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="buzz1" width="396" height="335"/>
+    </resources>
+</document>
