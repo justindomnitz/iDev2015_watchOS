@@ -36,15 +36,15 @@ class ViewController: UIViewController, WCSessionDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        WCSession.default().delegate = self
-        WCSession.default().activate()
+        WCSession.default.delegate = self
+        WCSession.default.activate()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        WCSession.default().delegate = self
-        WCSession.default().activate()
+        WCSession.default.delegate = self
+        WCSession.default.activate()
     }
     
     @IBAction func navyButton(_ sender: UIButton) {
@@ -93,7 +93,7 @@ class ViewController: UIViewController, WCSessionDelegate {
         var session: WCSession!
         
         if WCSession.isSupported() {
-            session = WCSession.default()
+            session = WCSession.default
             session.delegate = self
             session.activate()
             

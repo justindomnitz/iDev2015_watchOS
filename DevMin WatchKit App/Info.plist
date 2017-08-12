@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>DevMin WatchKit App</string>
+	<string>iDev2015_watchOS WatchKit App</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -28,7 +28,7 @@
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 	</array>
 	<key>WKCompanionAppBundleIdentifier</key>
-	<string>com.devmingreenville.DevMin</string>
+	<string>com.lowyoyo.iDev2015-watchOS</string>
 	<key>WKWatchKitApp</key>
 	<true/>
 </dict>

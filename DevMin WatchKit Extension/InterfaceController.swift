@@ -22,8 +22,8 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
 
         super.awake(withContext: context)
         
-        WCSession.default().delegate = self
-        WCSession.default().activate()
+        WCSession.default.delegate = self
+        WCSession.default.activate()
     }
     
     override func willActivate() {
@@ -31,8 +31,8 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
 
         super.willActivate()
 
-        WCSession.default().delegate = self
-        WCSession.default().activate()
+        WCSession.default.delegate = self
+        WCSession.default.activate()
     }
 
     override func didDeactivate() {
@@ -89,7 +89,7 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
     func sendMessage(_ watchMessage: Dictionary<String, AnyObject>) {
         print("InterfaceController - \(#function)")
         
-        WCSession.default().sendMessage(watchMessage, replyHandler: { (content) in
+        WCSession.default.sendMessage(watchMessage, replyHandler: { (content) in
             var respStatus = ""
             if  (content as NSDictionary)["status"] != nil {
                 respStatus = (content as NSDictionary)["status"] as! String
