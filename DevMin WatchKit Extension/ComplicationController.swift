@@ -66,11 +66,11 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
                 handler(nil)
             }
         case .modularSmall:
-            handler(nil)
+            handler(CLKComplicationTimelineEntry(date: Date(), complicationTemplate: getModularSmallTemplate()!))
         case .utilitarianLarge:
             handler(nil)
         case .utilitarianSmall:
-            handler(nil)
+            handler(CLKComplicationTimelineEntry(date: Date(), complicationTemplate: getUtilitarianSmallTemplate()!))
         case .circularSmall:
             if gaTechFootballWinLikely.count > 0 {
             handler(CLKComplicationTimelineEntry(date: Date(), complicationTemplate: getCircularSmallTemplate(gaTechFootballWinLikely[0])!))
@@ -107,11 +107,17 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
                 handler(nil)
             }
         case .modularSmall:
-            handler(nil)
+            if let template = getModularSmallTemplate() {
+                handler([CLKComplicationTimelineEntry(date: Date(), complicationTemplate: template)])
+                return
+            }
         case .utilitarianLarge:
             handler(nil)
         case .utilitarianSmall:
-            handler(nil)
+            if let template = getUtilitarianSmallTemplate() {
+                handler([CLKComplicationTimelineEntry(date: Date(), complicationTemplate: template)])
+                return
+            }
         case .circularSmall:
             if gaTechFootballWinLikely.count > 0 && gaTechFootballWinLikely.count <= limit {
                 handler([CLKComplicationTimelineEntry(date: nowDate, complicationTemplate: getCircularSmallTemplate(gaTechFootballWinLikely[0])!)])
@@ -140,16 +146,31 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         case .modularLarge:
             handler(getModularLargeTemplate(schedule)!)
         case .modularSmall:
-            handler(nil)
+            handler(getModularSmallTemplate())
         case .utilitarianLarge:
             handler(nil)
         case .utilitarianSmall:
-            handler(nil)
+            handler(getUtilitarianSmallTemplate())
         case .circularSmall:
             handler(getCircularSmallTemplate(schedule)!)
         default:
             break
         }
+    }
+    
+    func getModularSmallTemplate() -> CLKComplicationTemplate? {
+        let template = CLKComplicationTemplateModularSmallColumnsText()
+        template.row1Column1TextProvider = CLKSimpleTextProvider(text: "Go"       , shortText: "Go"  )
+        template.row1Column2TextProvider = CLKSimpleTextProvider(text: ""         , shortText: ""    )
+        template.row2Column1TextProvider = CLKSimpleTextProvider(text: "Jackets!" , shortText: "GT!" )
+        template.row2Column2TextProvider = CLKSimpleTextProvider(text: ""         , shortText: ""    )
+        return template
+    }
+    
+    func getUtilitarianSmallTemplate() -> CLKComplicationTemplate? {
+        let template = CLKComplicationTemplateUtilitarianSmallFlat()
+        template.textProvider = CLKSimpleTextProvider(text: "GT", shortText: "GT")
+        return template
     }
     
     func getModularLargeTemplate(_ schedule: Dictionary<String,AnyObject>) -> CLKComplicationTemplate? {
